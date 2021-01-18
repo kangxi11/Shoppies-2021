@@ -9,7 +9,7 @@ class App extends Component {
   state = {
     api: 'http://www.omdbapi.com/?apikey=bc05ca17&s=',
     searchValue: '',
-    searchResults: []
+    searchResults: null
   }
 
   sendRequest = (title) => {
@@ -17,7 +17,6 @@ class App extends Component {
       .then(response => {
         if (response.data.Response === 'True') {
           const results = response.data.Search.map(movie => {
-            console.log(movie);
             return {
                 title: movie.Title,
                 year: movie.Year,
@@ -25,7 +24,11 @@ class App extends Component {
                 poster: movie.Poster
             }
           });
-          this.setState({searchResults: results});
+          if (results.length > 5) {
+            this.setState({searchResults: [results.slice(0,5), results.slice(5,results.length)]});
+          } else {
+            this.setState({searchResults: [results]});
+          }
         } else {
           this.setState({searchResults: null});
         }
@@ -37,6 +40,16 @@ class App extends Component {
   }
 
   render() {
+    let movieGroups = null;
+    if (this.state.searchResults) {
+      movieGroups = this.state.searchResults.map((group, i) => {
+        return <Movies
+          key={i}
+          searchResults={group}
+        />
+      })
+    }
+    console.log(movieGroups);
     return (
       <div className={styles.App}>
         <SearchBar
@@ -44,7 +57,9 @@ class App extends Component {
           changed={(event) => this.setState({searchValue: event.target.value})}
           searchClicked={this.searchButtonHandler}
         />
-        <Movies searchResults={this.state.searchResults}/>
+        <div className={styles.MovieGroup}>
+          {movieGroups}
+        </div>
       </div>
     );  
   }
