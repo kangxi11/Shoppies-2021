@@ -11,6 +11,7 @@ const movies = (props) => (
             title={movie.title}
             year={movie.year}
             poster={movie.poster}
+            nominateClicked={(event) => props.nominateClicked(movie)}
             />
         })}
         <br/>
