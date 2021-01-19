@@ -6,12 +6,17 @@ import _ from 'lodash';
 import Movies from './components/Movies/Movies';
 import SearchBar from './components/SearchBar/SearchBar';
 import Nominations from './components/Nominations/Nominations';
+
+import ReactLoading from 'react-loading';
+import SadFace from './assets/unhappy.png'
 class App extends Component {
   state = {
     api: 'http://www.omdbapi.com/?apikey=bc05ca17&s=',
     searchValue: '',
     searchResults: null,
-    nominationList: []
+    nominationList: [],
+    isLoading: false,
+    noData: false
   }
 
   sendRequest = (title) => {
@@ -31,13 +36,20 @@ class App extends Component {
           } else {
             this.setState({searchResults: [results]});
           }
+          this.setState({noData: false});
         } else {
           this.setState({searchResults: null});
+          this.setState({noData: true});
         }
+        this.setState({isLoading: false});
       });
   }
 
   searchButtonHandler = () => {
+    this.setState({
+      isLoading: true,
+      noData: false
+    });
     this.sendRequest(this.state.searchValue);
   }
 
@@ -67,6 +79,19 @@ class App extends Component {
         />
       })
     }
+
+    let loading = null;
+    if (this.state.isLoading) {
+      loading = <ReactLoading type={"bars"} color={"grey"} className={styles.Loading}/>
+    }
+
+    let noData = null;
+    if (this.state.noData) {
+      noData = <div className={styles.NoDataContainer}>
+        <img src={SadFace} alt='no-data' className={styles.NoData}/>
+        <p>No Movies Found</p>
+      </div>
+    }
     
     return (
       <div className={styles.App}>
@@ -76,6 +101,12 @@ class App extends Component {
             changed={(event) => this.setState({searchValue: event.target.value})}
             searchClicked={this.searchButtonHandler}
           />
+          <div>
+            {loading}
+          </div>
+          <div>
+            {noData}
+          </div>
           <div className={styles.MovieGroup}>
             {movieGroups}
           </div>
