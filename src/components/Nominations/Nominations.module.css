@@ -1,0 +1,19 @@
+.Nominations {
+    height: 60px;
+    background-color: #b52832;
+    display: flex;
+    flex-direction: column;
+}
+
+.Title {
+    margin: 16px 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.Movies {
+    margin-top: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

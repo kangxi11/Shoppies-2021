@@ -17,17 +17,19 @@ const searchBar = (props) => {
     }
 
     return (
-        <div>
+        <div className={styles.Banner}>
             <TextField
                 className={styles.Search}
                 InputProps={{
                     startAdornment: (
                     <InputAdornment onClick={props.searchClicked}>
                         <IconButton>
-                        <SearchIcon />
+                            <SearchIcon />
                         </IconButton>
                     </InputAdornment>
-                    )
+                    ),
+                    disableUnderline: true,
+                    className: styles.Input
                 }}
                 placeholder="Search movies"
                 style={{backgroundImage: `url("${searchIcon}")`}}

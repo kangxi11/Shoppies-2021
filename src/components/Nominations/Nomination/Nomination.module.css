@@ -1,7 +1,8 @@
 .Nomination {
     display: flex;
-    background-color: white;
+    background-color: #3f505c;
     margin: 3px 3px;
+    color: white;
 }
 
 .Title {
@@ -17,7 +18,7 @@
 
 .close {
     position: sticky;
-    right: 32px;
+    right: 15px;
     top: 32px;
     width: 32px;
     height: 32px;
@@ -33,7 +34,7 @@
     content: ' ';
     height: 24px;
     width: 2px;
-    background-color: #333;
+    background-color: white;
 }
 .close:before {
     transform: rotate(45deg);

@@ -81,7 +81,6 @@ class App extends Component {
           </div>
         </div>
         <div className={styles.Nominations}>
-          Nomination List
           <Nominations
             nominationList={this.state.nominationList}
             nominationRemoved={this.nominationRemovedHandler}

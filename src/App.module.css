@@ -1,12 +1,13 @@
 .App {
-  margin: 30px 30px;
   display: flex;
 }
 
 .Nominations {
   width: 30%;
+  max-width: 600px;
 }
 
 .Search {
   width: 70%;
+  max-width: 900px;
 }
