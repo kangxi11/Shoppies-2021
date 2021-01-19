@@ -1,13 +1,16 @@
 .App {
   display: flex;
+  justify-content: center;
 }
 
 .Nominations {
   width: 30%;
   max-width: 600px;
+  /* display: inline-block; */
 }
 
 .Search {
   width: 70%;
   max-width: 900px;
+  /* display: inline-block; */
 }
