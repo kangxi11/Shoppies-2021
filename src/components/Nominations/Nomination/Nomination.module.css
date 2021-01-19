@@ -1,0 +1,42 @@
+.Nomination {
+    display: flex;
+    background-color: white;
+    margin: 3px 3px;
+}
+
+.Title {
+    margin-left: 1rem;
+    width: 60%;
+    overflow: hidden;
+}
+
+.Year {
+    width: 30%;
+}
+
+.close {
+    position: sticky;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    margin-top: 0.8rem;
+  }
+.close:hover {
+    opacity: 1;
+}
+.close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 24px;
+    width: 2px;
+    background-color: #333;
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
+}
