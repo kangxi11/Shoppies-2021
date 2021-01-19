@@ -45,7 +45,7 @@ class App extends Component {
     if ( (_.findIndex(this.state.nominationList, d => d.id === movie.id) === -1) && (this.state.nominationList.length < 5)) {
       this.setState(prevState => ({
         nominationList: [...prevState.nominationList, movie]
-      }));  
+      }));
     }
   }
 
@@ -63,9 +63,11 @@ class App extends Component {
           key={i}
           searchResults={group}
           nominateClicked={this.nominateClickedHandler}
+          nominationList={this.state.nominationList}
         />
       })
     }
+    
     return (
       <div className={styles.App}>
         <div className={styles.Search}>

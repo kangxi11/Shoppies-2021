@@ -1,6 +1,7 @@
 .Movie img {
     height: 14.7rem;
     width: inherit;
+    box-shadow: 3px 3px 4px;
 }
 
 .Movie {
@@ -11,13 +12,14 @@
 }
 
 .Title {
-    height: 2.5rem;
+    height: 3.2rem;
     overflow: hidden;
+    color: white;
 }
 
 .Year {
-    color: gray;
-    margin-bottom: 1rem !important;
+    margin-top: 1.5rem !important;
+    color: #8CAFC6;
 }
 
 .Movie p {
@@ -27,4 +29,23 @@
 .Movie button {
     width: fit-content;
     margin: auto;
+}
+
+.Movie button {
+    background-color:#FFBE06;
+    border-radius: 4rem;
+    color: white;
+    padding: 5px 5px;
+    transform: translateY(-103px);
+    font-weight: bold;
+    border: none;
+    outline:none;
+}
+
+.Movie button:hover {
+    background-color: orange;
+}
+
+.Movie button:disabled {
+    background-color: gray;
 }
