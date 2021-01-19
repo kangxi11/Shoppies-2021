@@ -6,12 +6,13 @@
 
 .Title {
     margin-left: 1rem;
-    width: 60%;
+    width: 75%;
     overflow: hidden;
+    height: 1.2rem;
 }
 
 .Year {
-    width: 30%;
+    width: 15%;
 }
 
 .close {

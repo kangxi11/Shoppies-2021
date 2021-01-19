@@ -6,8 +6,6 @@ import _ from 'lodash';
 import Movies from './components/Movies/Movies';
 import SearchBar from './components/SearchBar/SearchBar';
 import Nominations from './components/Nominations/Nominations';
-import nomination from './components/Nominations/Nomination/Nomination';
-
 class App extends Component {
   state = {
     api: 'http://www.omdbapi.com/?apikey=bc05ca17&s=',
@@ -44,9 +42,11 @@ class App extends Component {
   }
 
   nominateClickedHandler = (movie) => {
-    this.setState(prevState => ({
-      nominationList: [...prevState.nominationList, movie]
-    }));
+    if ( (_.findIndex(this.state.nominationList, d => d.id === movie.id) === -1) && (this.state.nominationList.length < 5)) {
+      this.setState(prevState => ({
+        nominationList: [...prevState.nominationList, movie]
+      }));  
+    }
   }
 
   nominationRemovedHandler = (movie, i) => {
