@@ -14,17 +14,35 @@
 
 .Year {
     width: 15%;
+    height: 1.2rem;
+    overflow: hidden;
+}
+
+.Wrapper {
+    overflow: hidden;
+}
+
+.Container {
+    transition: transform 0.3s ease-out;
+}
+
+.Right {
+    transform: translateX(600px);
+}
+
+.Left {
+    transform: translateX(0);
 }
 
 .close {
     position: sticky;
     right: 15px;
-    top: 32px;
+    top: 16px;
     width: 32px;
     height: 32px;
     opacity: 0.3;
-    margin-top: 0.8rem;
-  }
+}
+
 .close:hover {
     opacity: 1;
 }
