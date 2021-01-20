@@ -69,7 +69,7 @@ class App extends Component {
 
   render() {
     let movieGroups = null;
-    if (this.state.searchResults) {
+    if (this.state.searchResults && !this.state.isLoading) {
       movieGroups = this.state.searchResults.map((group, i) => {
         return <Movies
           key={i}
