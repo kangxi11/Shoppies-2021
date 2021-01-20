@@ -1,16 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import noPoster from '../../assets/no-image.png';
 
 import styles from './Movie.module.css';
+class Movie extends Component {
+    state = {
+        container: [styles.Container, styles.Up]
+    }
 
-const movie = (props) => (
-    <div className={styles.Movie}>
-        <img src={props.poster === 'N/A' ? noPoster : props.poster} alt='poster'/>
-        <p className={styles.Year}>{props.year}</p>
-        <p className={styles.Title}>{props.title}</p>
-        <button onClick={props.nominateClicked} disabled={!props.disabled}>Nominate</button>
-    </div>
-);
+    componentDidMount() {
+        setTimeout(this.dropdown, 10);
+    }
 
-export default movie;
+    dropdown = () => {
+        this.setState({container: [styles.Container, styles.Down]});
+    }
+
+    render() {
+        return (
+            <div className={styles.Movie}>
+                <div className={this.state.container.join(' ')}>
+                    <img src={this.props.poster === 'N/A' ? noPoster : this.props.poster} alt='poster'/>
+                    <p className={styles.Year}>{this.props.year}</p>
+                    <p className={styles.Title}>{this.props.title}</p>
+                    <div className={styles.Button}>
+                        <button onClick={this.props.nominateClicked} disabled={!this.props.disabled}>Nominate</button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Movie;

@@ -4,11 +4,24 @@
     box-shadow: 3px 3px 4px;
 }
 
+.Container {
+    transition: transform 0.3s ease-out;
+}
+
+.Up {
+    transform: translateY(-350px);
+}
+
+.Down {
+    transform: translateY(0);
+}
+
 .Movie {
     display: flex;
     flex-direction: column;
     margin: 10px 10px;
     width: 10rem;
+    overflow: hidden;
 }
 
 .Title {
@@ -28,7 +41,12 @@
 
 .Movie button {
     width: fit-content;
-    margin: auto;
+}
+
+.Button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .Movie button {
