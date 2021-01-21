@@ -11,7 +11,7 @@ import ReactLoading from 'react-loading';
 import SadFace from './assets/unhappy.png'
 class App extends Component {
   state = {
-    api: 'http://www.omdbapi.com/?apikey=bc05ca17&s=',
+    api: 'https://www.omdbapi.com/?apikey=bc05ca17&s=',
     searchValue: '',
     searchResults: null,
     nominationList: [],
