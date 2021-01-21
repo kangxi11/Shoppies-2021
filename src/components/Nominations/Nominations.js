@@ -2,6 +2,7 @@ import React from 'react';
 
 import Nomination from './Nomination/Nomination';
 import styles from './Nominations.module.css';
+import Banner from '../Banner/Banner';
 
 const nominations = (props) => (
     <div className={styles.Nominations}>
@@ -15,6 +16,9 @@ const nominations = (props) => (
                     nominationRemoved={(event) => props.nominationRemoved(movie, i)}
                 />
             })}
+        </div>
+        <div className={styles.Banner}>
+            <Banner complete={props.nominationList.length === 5}/>
         </div>
     </div>
 );
