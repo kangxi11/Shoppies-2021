@@ -94,28 +94,31 @@ class App extends Component {
     }
     
     return (
-      <div className={styles.App}>
-        <div className={styles.Search}>
-          <SearchBar
-            searchValue={this.state.searchValue}
-            changed={(event) => this.setState({searchValue: event.target.value})}
-            searchClicked={this.searchButtonHandler}
-          />
-          <div>
-            {loading}
+      <div>
+        <h1 className={styles.Title}>The Shoppies</h1>
+        <div className={styles.App}>
+          <div className={styles.Search}>
+            <SearchBar
+              searchValue={this.state.searchValue}
+              changed={(event) => this.setState({searchValue: event.target.value})}
+              searchClicked={this.searchButtonHandler}
+            />
+            <div>
+              {loading}
+            </div>
+            <div>
+              {noData}
+            </div>
+            <div className={styles.MovieGroup}>
+              {movieGroups}
+            </div>
           </div>
-          <div>
-            {noData}
+          <div className={styles.Nominations}>
+            <Nominations
+              nominationList={this.state.nominationList}
+              nominationRemoved={this.nominationRemovedHandler}
+            />
           </div>
-          <div className={styles.MovieGroup}>
-            {movieGroups}
-          </div>
-        </div>
-        <div className={styles.Nominations}>
-          <Nominations
-            nominationList={this.state.nominationList}
-            nominationRemoved={this.nominationRemovedHandler}
-          />
         </div>
       </div>
     );  

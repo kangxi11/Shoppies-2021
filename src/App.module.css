@@ -28,3 +28,9 @@
   text-align: center;
   color: #8CAFC6;
 }
+
+.Title {
+  color: white;
+  font-weight: bold;
+  margin-left: 2rem;
+}
