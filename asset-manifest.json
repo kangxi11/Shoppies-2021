@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Shoppies-2021/static/css/main.ee6e743a.chunk.css",
+    "main.js": "/Shoppies-2021/static/js/main.107b0578.chunk.js",
+    "main.js.map": "/Shoppies-2021/static/js/main.107b0578.chunk.js.map",
+    "runtime-main.js": "/Shoppies-2021/static/js/runtime-main.f730db84.js",
+    "runtime-main.js.map": "/Shoppies-2021/static/js/runtime-main.f730db84.js.map",
+    "static/js/2.b61d37d7.chunk.js": "/Shoppies-2021/static/js/2.b61d37d7.chunk.js",
+    "static/js/2.b61d37d7.chunk.js.map": "/Shoppies-2021/static/js/2.b61d37d7.chunk.js.map",
+    "static/js/3.12ac792a.chunk.js": "/Shoppies-2021/static/js/3.12ac792a.chunk.js",
+    "static/js/3.12ac792a.chunk.js.map": "/Shoppies-2021/static/js/3.12ac792a.chunk.js.map",
+    "index.html": "/Shoppies-2021/index.html",
+    "static/css/main.ee6e743a.chunk.css.map": "/Shoppies-2021/static/css/main.ee6e743a.chunk.css.map",
+    "static/js/2.b61d37d7.chunk.js.LICENSE.txt": "/Shoppies-2021/static/js/2.b61d37d7.chunk.js.LICENSE.txt",
+    "static/media/search.7576ac8c.png": "/Shoppies-2021/static/media/search.7576ac8c.png",
+    "static/media/unhappy.70f55be5.png": "/Shoppies-2021/static/media/unhappy.70f55be5.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f730db84.js",
+    "static/js/2.b61d37d7.chunk.js",
+    "static/css/main.ee6e743a.chunk.css",
+    "static/js/main.107b0578.chunk.js"
+  ]
+}
